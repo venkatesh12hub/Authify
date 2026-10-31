@@ -1,0 +1,316 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account | Authify</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/auth.css">
+
+</head>
+
+<body>
+
+    <div class="auth-page">
+
+        <!-- Left Side -->
+        <div class="auth-info">
+
+            <a href="../index.html" class="logo">
+                <i class="fa-solid fa-shield-halved"></i>
+                Authify<span>.</span>
+            </a>
+
+            <div class="info-content">
+
+                <div class="info-badge">
+                    <i class="fa-solid fa-sparkles"></i>
+                    Start your journey
+                </div>
+
+                <h1>
+                    Create your account.
+                    <span>Unlock a smarter experience.</span>
+                </h1>
+
+                <p>
+                    Join Authify and experience a simple way to
+                    manage your digital identity and personal account.
+                </p>
+
+                <div class="info-points">
+
+                    <div>
+                        <i class="fa-solid fa-circle-check"></i>
+                        Simple registration process
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-circle-check"></i>
+                        Personalized user dashboard
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-circle-check"></i>
+                        Easy account management
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="info-footer">
+                © 2026 Authify. All rights reserved.
+            </div>
+
+        </div>
+
+
+        <!-- Right Side Registration Form -->
+        <div class="auth-form-section">
+
+            <div class="auth-form-wrapper">
+
+                <div class="mobile-logo">
+                    <a href="../index.html" class="logo">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        Authify<span>.</span>
+                    </a>
+                </div>
+
+                <div class="form-heading">
+
+                    <span class="section-tag">CREATE ACCOUNT</span>
+
+                    <h2>Get started today</h2>
+
+                    <p>Enter your details to create your account.</p>
+
+                </div>
+
+
+                <!-- Registration Form -->
+                <form id="registerForm" novalidate>
+
+                    <!-- Full Name -->
+                    <div class="form-group">
+
+                        <label for="fullName">Full Name</label>
+
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-user"></i>
+
+                            <input
+                                type="text"
+                                id="fullName"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                            >
+                        </div>
+
+                        <small class="error-message" id="nameError"></small>
+
+                    </div>
+
+
+                    <!-- Email -->
+                    <div class="form-group">
+
+                        <label for="email">Email Address</label>
+
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-envelope"></i>
+
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="example@gmail.com"
+                                autocomplete="email"
+                            >
+                        </div>
+
+                        <small class="error-message" id="emailError"></small>
+
+                    </div>
+
+
+                    <!-- Phone -->
+                    <div class="form-group">
+
+                        <label for="phone">Phone Number</label>
+
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-phone"></i>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                placeholder="Enter 10-digit mobile number"
+                                maxlength="10"
+                                inputmode="numeric"
+                                autocomplete="tel"
+                            >
+                        </div>
+
+                        <small class="error-message" id="phoneError"></small>
+
+                    </div>
+
+
+                    <!-- Password -->
+                    <div class="form-group">
+
+                        <label for="password">Password</label>
+
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Create a password"
+                                autocomplete="new-password"
+                            >
+
+                            <button type="button"
+                                    class="toggle-password"
+                                    data-target="password"
+                                    aria-label="Show password">
+
+                                <i class="fa-regular fa-eye"></i>
+
+                            </button>
+                        </div>
+
+                        <div class="password-strength">
+
+                            <div class="strength-bars">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <small id="strengthText">
+                                Password strength
+                            </small>
+
+                        </div>
+
+                        <small class="error-message" id="passwordError"></small>
+
+                    </div>
+
+
+                    <!-- Confirm Password -->
+                    <div class="form-group">
+
+                        <label for="confirmPassword">Confirm Password</label>
+
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                placeholder="Confirm your password"
+                                autocomplete="new-password"
+                            >
+
+                            <button type="button"
+                                    class="toggle-password"
+                                    data-target="confirmPassword"
+                                    aria-label="Show password">
+
+                                <i class="fa-regular fa-eye"></i>
+
+                            </button>
+                        </div>
+
+                        <small class="error-message" id="confirmError"></small>
+
+                    </div>
+
+
+                    <!-- Terms and Conditions -->
+                    <div class="terms-group">
+
+                        <input type="checkbox" id="terms">
+
+                        <label for="terms">
+                            I agree to the
+                            <a href="#terms">Terms & Conditions</a>
+                            and Privacy Policy.
+                        </label>
+
+                    </div>
+
+                    <small class="error-message" id="termsError"></small>
+
+
+                    <!-- Submit -->
+                    <button type="submit" class="submit-btn" id="registerBtn">
+
+                        Create Account
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </form>
+
+
+                <!-- Login Link -->
+                <div class="login-link">
+
+                    Already have an account?
+
+                    <a href="login.html">Sign In</a>
+
+                </div>
+
+
+                <!-- Back to Home -->
+                <div class="back-home">
+
+                    <a href="../index.html">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Back to Home
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Notification -->
+    <div class="auth-toast" id="authToast" role="status" aria-live="polite">
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="authToastMessage"></span>
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="../js/storage.js"></script>
+    <script src="../js/register.js"></script>
+
+</body>
+
+</html>

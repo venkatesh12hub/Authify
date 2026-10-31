@@ -1,0 +1,356 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive User Registration and Authentication System">
+    <title>Authify | User Authentication System</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+
+            <a href="#home" class="logo">
+                <i class="fa-solid fa-shield-halved"></i>
+                Authify<span>.</span>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="#home" class="active">Home</a>
+                <a href="#features">Features</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <div class="nav-buttons">
+                <button class="btn btn-outline" data-action="login">Sign In</button>
+                <button class="btn btn-primary" data-action="register">Get Started</button>
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- Hero Section -->
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-glow glow-one"></div>
+            <div class="hero-glow glow-two"></div>
+
+            <div class="container hero-container">
+
+                <div class="hero-content">
+
+                    <div class="hero-badge">
+                        <span class="status-dot"></span>
+                        Secure Authentication Platform
+                    </div>
+
+                    <h1>
+                        Your Digital Identity,
+                        <span>Secured & Simplified.</span>
+                    </h1>
+
+                    <p>
+                        Experience a smarter way to manage your accounts.
+                        Register, sign in and manage your profile through
+                        one simple and interactive authentication platform.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary btn-large"
+                                data-action="register">
+                            Create Your Account
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                        <button class="btn btn-outline btn-large"
+                                data-action="login">
+                            <i class="fa-solid fa-right-to-bracket"></i>
+                            Sign In
+                        </button>
+                    </div>
+
+                    <div class="hero-trust">
+                        <div class="trust-icon">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+
+                        <div>
+                            <strong>One platform. Two access roles.</strong>
+                            <span>User & Administrator access</span>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- Hero Visual -->
+                <div class="hero-visual">
+
+                    <div class="visual-glow"></div>
+
+                    <div class="dashboard-card">
+
+                        <div class="card-header">
+                            <div>
+                                <span class="card-label">ACCOUNT OVERVIEW</span>
+                                <h3>Welcome Back!</h3>
+                            </div>
+
+                            <div class="profile-icon">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                        </div>
+
+                        <div class="security-card">
+                            <div class="security-icon">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+
+                            <div>
+                                <span>Account Security</span>
+                                <strong>Protected Access</strong>
+                            </div>
+
+                            <i class="fa-solid fa-circle-check check-icon"></i>
+                        </div>
+
+                        <div class="activity-heading">
+                            <span>Platform Features</span>
+                            <span class="live-status">ACTIVE</span>
+                        </div>
+
+                        <div class="feature-row">
+                            <div class="feature-icon purple">
+                                <i class="fa-solid fa-user-plus"></i>
+                            </div>
+                            <div class="feature-info">
+                                <strong>User Registration</strong>
+                                <span>Create your account</span>
+                            </div>
+                            <i class="fa-solid fa-check row-check"></i>
+                        </div>
+
+                        <div class="feature-row">
+                            <div class="feature-icon blue">
+                                <i class="fa-solid fa-right-to-bracket"></i>
+                            </div>
+                            <div class="feature-info">
+                                <strong>Secure Login</strong>
+                                <span>Access your dashboard</span>
+                            </div>
+                            <i class="fa-solid fa-check row-check"></i>
+                        </div>
+
+                        <div class="feature-row">
+                            <div class="feature-icon green">
+                                <i class="fa-solid fa-user-shield"></i>
+                            </div>
+                            <div class="feature-info">
+                                <strong>Admin Management</strong>
+                                <span>Manage user accounts</span>
+                            </div>
+                            <i class="fa-solid fa-check row-check"></i>
+                        </div>
+
+                        <div class="card-footer">
+                            <i class="fa-solid fa-circle-info"></i>
+                            Your account, your control.
+                        </div>
+
+                    </div>
+
+                    <div class="floating-badge badge-top">
+                        <i class="fa-solid fa-lock"></i>
+                        Authentication
+                    </div>
+
+                    <div class="floating-badge badge-bottom">
+                        <i class="fa-solid fa-user-shield"></i>
+                        Role Based Access
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Features Section -->
+        <section class="features section-padding" id="features">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-tag">WHAT WE OFFER</span>
+                    <h2>Everything you need in <span>one place.</span></h2>
+                    <p>
+                        Simple account management with separate access
+                        for users and administrators.
+                    </p>
+                </div>
+
+                <div class="feature-grid">
+
+                    <div class="feature-card">
+                        <div class="feature-card-icon purple">
+                            <i class="fa-solid fa-user-plus"></i>
+                        </div>
+                        <h3>Easy Registration</h3>
+                        <p>Create your account with a simple registration form and instant validation.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-card-icon blue">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3>User Authentication</h3>
+                        <p>Access your personal account through a dedicated login system.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-card-icon green">
+                            <i class="fa-solid fa-user-gear"></i>
+                        </div>
+                        <h3>Admin Management</h3>
+                        <p>Give administrators a dedicated dashboard to manage registered users.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-card-icon orange">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                        </div>
+                        <h3>Session Management</h3>
+                        <p>Manage login sessions and securely return to the home page after logout.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- About Section -->
+        <section class="about section-padding" id="about">
+
+            <div class="container about-container">
+
+                <div class="about-icon">
+                    <i class="fa-solid fa-fingerprint"></i>
+                </div>
+
+                <div class="about-content">
+                    <span class="section-tag">ABOUT THE PROJECT</span>
+
+                    <h2>Authentication made <span>simple.</span></h2>
+
+                    <p>
+                        Authify is an interactive frontend mini project
+                        designed to demonstrate how modern websites
+                        handle user registration, login, account management
+                        and administrator access.
+                    </p>
+
+                    <p>
+                        Built using HTML, CSS and JavaScript, this project
+                        demonstrates DOM manipulation, form validation,
+                        browser storage and authentication workflows.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Contact Section -->
+        <section class="contact section-padding" id="contact">
+
+            <div class="container contact-container">
+
+                <div class="section-heading">
+                    <span class="section-tag">GET STARTED</span>
+                    <h2>Ready to manage your <span>account?</span></h2>
+                    <p>Join the platform and experience simple account management.</p>
+                </div>
+
+                <div class="contact-buttons">
+                    <button class="btn btn-primary btn-large"
+                            data-action="register">
+                        Create Account
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                    <button class="btn btn-outline btn-large"
+                            data-action="admin">
+                        <i class="fa-solid fa-user-shield"></i>
+                        Admin Login
+                    </button>
+
+                    <a href="pages/admin-register.html" class="btn btn-primary btn-large">
+                        <i class="fa-solid fa-user-plus"></i>
+                        Admin Register
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="container footer-container">
+
+            <a href="#home" class="logo">
+                <i class="fa-solid fa-shield-halved"></i>
+                Authify<span>.</span>
+            </a>
+
+            <p>Interactive User Registration & Authentication System</p>
+
+            <div class="footer-bottom">
+                <span>© 2026 Authify. Mini Project.</span>
+                <span>Built with HTML, CSS & JavaScript</span>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast" role="status" aria-live="polite">
+        <i class="fa-solid fa-circle-info"></i>
+        <span id="toastMessage"></span>
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>

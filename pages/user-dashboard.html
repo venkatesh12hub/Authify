@@ -1,0 +1,578 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>User Dashboard | Authify</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" href="../css/dashboard.css">
+
+</head>
+
+<body>
+
+    <div class="dashboard-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+
+            <a href="../index.html" class="logo">
+                <i class="fa-solid fa-shield-halved"></i>
+                Authify<span>.</span>
+            </a>
+
+            <div class="sidebar-label">MAIN MENU</div>
+
+            <nav class="sidebar-nav">
+
+                <button class="nav-item active" data-section="overview">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Overview</span>
+                </button>
+
+                <button class="nav-item" data-section="profile">
+                    <i class="fa-regular fa-user"></i>
+                    <span>My Profile</span>
+                </button>
+
+                <button class="nav-item" data-section="settings">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Account Settings</span>
+                </button>
+
+                <button class="nav-item" data-section="security">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>Security</span>
+                </button>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <div class="sidebar-user">
+                    <div class="avatar" id="sidebarAvatar">U</div>
+
+                    <div class="sidebar-user-info">
+                        <strong id="sidebarName">User</strong>
+                        <span>Standard User</span>
+                    </div>
+                </div>
+
+                <button class="logout-btn" id="logoutBtn">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+
+                <div class="topbar-left">
+
+                    <button class="menu-toggle" id="menuToggle"
+                            aria-label="Toggle sidebar">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                    <div>
+                        <span class="breadcrumb">Pages / User</span>
+                        <h2 id="pageTitle">Overview</h2>
+                    </div>
+
+                </div>
+
+                <div class="topbar-right">
+
+                    <div class="topbar-date">
+                        <i class="fa-regular fa-calendar"></i>
+                        <span id="currentDate"></span>
+                    </div>
+
+                    <div class="topbar-avatar" id="topbarAvatar">U</div>
+
+                </div>
+
+            </header>
+
+
+            <!-- CONTENT AREA -->
+            <div class="content-area">
+
+
+                <!-- ==================================
+                     OVERVIEW SECTION
+                ================================== -->
+
+                <section class="dashboard-section active" id="overview">
+
+                    <div class="welcome-banner">
+
+                        <div>
+                            <span class="welcome-label">USER DASHBOARD</span>
+
+                            <h1>Welcome back, <span id="welcomeName">User</span>!</h1>
+
+                            <p>
+                                Manage your account and explore your personal dashboard.
+                            </p>
+                        </div>
+
+                        <div class="welcome-icon">
+                            <i class="fa-solid fa-hand-sparkles"></i>
+                        </div>
+
+                    </div>
+
+
+                    <!-- STATISTICS -->
+                    <div class="stats-grid">
+
+                        <div class="stat-card">
+                            <div class="stat-icon purple">
+                                <i class="fa-solid fa-user-check"></i>
+                            </div>
+
+                            <div>
+                                <span>Account Status</span>
+                                <h3 id="overviewStatus">Active</h3>
+                            </div>
+                        </div>
+
+
+                        <div class="stat-card">
+                            <div class="stat-icon blue">
+                                <i class="fa-solid fa-calendar-check"></i>
+                            </div>
+
+                            <div>
+                                <span>Member Since</span>
+                                <h3 id="memberSince">--</h3>
+                            </div>
+                        </div>
+
+
+                        <div class="stat-card">
+                            <div class="stat-icon green">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+
+                            <div>
+                                <span>Account Role</span>
+                                <h3>User</h3>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <!-- ACCOUNT OVERVIEW -->
+                    <div class="dashboard-grid">
+
+                        <div class="dashboard-card account-card">
+
+                            <div class="card-heading">
+                                <h3>Account Information</h3>
+                                <span class="status-badge" id="statusBadge">
+                                    Active
+                                </span>
+                            </div>
+
+                            <div class="profile-overview">
+
+                                <div class="large-avatar" id="profileAvatar">U</div>
+
+                                <div>
+                                    <h2 id="overviewName">User Name</h2>
+                                    <p id="overviewEmail">user@example.com</p>
+                                </div>
+
+                            </div>
+
+                            <div class="detail-row">
+                                <span>Full Name</span>
+                                <strong id="overviewFullName">--</strong>
+                            </div>
+
+                            <div class="detail-row">
+                                <span>Email Address</span>
+                                <strong id="overviewEmailDetail">--</strong>
+                            </div>
+
+                            <div class="detail-row">
+                                <span>Phone Number</span>
+                                <strong id="overviewPhone">--</strong>
+                            </div>
+
+                            <button class="secondary-btn" data-section="profile">
+                                View Profile
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+
+                        </div>
+
+
+                        <!-- QUICK ACTIONS -->
+                        <div class="dashboard-card">
+
+                            <div class="card-heading">
+                                <h3>Quick Actions</h3>
+                            </div>
+
+                            <button class="quick-action" data-section="profile">
+
+                                <div class="quick-icon purple">
+                                    <i class="fa-solid fa-user-pen"></i>
+                                </div>
+
+                                <div>
+                                    <strong>Edit Profile</strong>
+                                    <span>Update your personal details</span>
+                                </div>
+
+                                <i class="fa-solid fa-chevron-right"></i>
+
+                            </button>
+
+
+                            <button class="quick-action" data-section="settings">
+
+                                <div class="quick-icon blue">
+                                    <i class="fa-solid fa-sliders"></i>
+                                </div>
+
+                                <div>
+                                    <strong>Account Settings</strong>
+                                    <span>Manage your preferences</span>
+                                </div>
+
+                                <i class="fa-solid fa-chevron-right"></i>
+
+                            </button>
+
+
+                            <button class="quick-action" data-section="security">
+
+                                <div class="quick-icon green">
+                                    <i class="fa-solid fa-key"></i>
+                                </div>
+
+                                <div>
+                                    <strong>Change Password</strong>
+                                    <span>Update your account password</span>
+                                </div>
+
+                                <i class="fa-solid fa-chevron-right"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ==================================
+                     PROFILE SECTION
+                ================================== -->
+
+                <section class="dashboard-section" id="profile">
+
+                    <div class="section-intro">
+                        <h1>My Profile</h1>
+                        <p>View and update your personal information.</p>
+                    </div>
+
+                    <div class="dashboard-card profile-card">
+
+                        <div class="profile-header">
+
+                            <div class="large-avatar" id="editAvatar">U</div>
+
+                            <div>
+                                <h2 id="profileDisplayName">User Name</h2>
+                                <p id="profileDisplayEmail">user@example.com</p>
+                                <span class="status-badge">Active Account</span>
+                            </div>
+
+                        </div>
+
+                        <div class="form-divider"></div>
+
+                        <form id="profileForm">
+
+                            <div class="form-grid">
+
+                                <div class="dashboard-form-group">
+                                    <label for="editName">Full Name</label>
+
+                                    <input type="text" id="editName"
+                                           placeholder="Enter your name" required>
+                                </div>
+
+                                <div class="dashboard-form-group">
+                                    <label for="editEmail">Email Address</label>
+
+                                    <input type="email" id="editEmail"
+                                           disabled>
+                                </div>
+
+                                <div class="dashboard-form-group">
+                                    <label for="editPhone">Phone Number</label>
+
+                                    <input type="tel" id="editPhone"
+                                           maxlength="10"
+                                           inputmode="numeric"
+                                           placeholder="Enter phone number" required>
+                                </div>
+
+                                <div class="dashboard-form-group">
+                                    <label for="editRole">Account Role</label>
+
+                                    <input type="text" id="editRole"
+                                           value="User" disabled>
+                                </div>
+
+                            </div>
+
+                            <p class="inline-error" id="profileError"></p>
+
+                            <button type="submit" class="primary-btn">
+                                <i class="fa-solid fa-floppy-disk"></i>
+                                Save Changes
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ==================================
+                     SETTINGS SECTION
+                ================================== -->
+
+                <section class="dashboard-section" id="settings">
+
+                    <div class="section-intro">
+                        <h1>Account Settings</h1>
+                        <p>Manage your account preferences.</p>
+                    </div>
+
+                    <div class="dashboard-card settings-card">
+
+                        <div class="card-heading">
+                            <h3>Account Preferences</h3>
+                        </div>
+
+                        <div class="setting-row">
+
+                            <div class="setting-info">
+                                <strong>Account Status</strong>
+                                <span>Current status of your account</span>
+                            </div>
+
+                            <span class="status-badge" id="settingsStatus">
+                                Active
+                            </span>
+
+                        </div>
+
+
+                        <div class="setting-row">
+
+                            <div class="setting-info">
+                                <strong>Account Email</strong>
+                                <span>Your registered email address</span>
+                            </div>
+
+                            <strong id="settingsEmail">--</strong>
+
+                        </div>
+
+
+                        <div class="setting-row">
+
+                            <div class="setting-info">
+                                <strong>Account Type</strong>
+                                <span>Your access level</span>
+                            </div>
+
+                            <strong>Standard User</strong>
+
+                        </div>
+
+
+                        <div class="setting-row">
+
+                            <div class="setting-info">
+                                <strong>Account Creation</strong>
+                                <span>Registration date</span>
+                            </div>
+
+                            <strong id="settingsCreated">--</strong>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ==================================
+                     SECURITY SECTION
+                ================================== -->
+
+                <section class="dashboard-section" id="security">
+
+                    <div class="section-intro">
+                        <h1>Security Settings</h1>
+                        <p>Keep your account information up to date.</p>
+                    </div>
+
+
+                    <div class="dashboard-card security-panel">
+
+                        <div class="card-heading">
+                            <h3>Change Password</h3>
+                            <i class="fa-solid fa-shield-halved security-heading-icon"></i>
+                        </div>
+
+                        <p class="security-description">
+                            Enter your current password and choose a new password.
+                        </p>
+
+
+                        <form id="passwordForm">
+
+                            <div class="dashboard-form-group">
+
+                                <label for="currentPassword">
+                                    Current Password
+                                </label>
+
+                                <div class="dashboard-input-wrapper">
+
+                                    <input type="password"
+                                           id="currentPassword"
+                                           placeholder="Enter current password"
+                                           required>
+
+                                    <button type="button"
+                                            class="dashboard-password-toggle"
+                                            data-target="currentPassword">
+                                        <i class="fa-regular fa-eye"></i>
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="dashboard-form-group">
+
+                                <label for="newPassword">
+                                    New Password
+                                </label>
+
+                                <div class="dashboard-input-wrapper">
+
+                                    <input type="password"
+                                           id="newPassword"
+                                           placeholder="Enter new password"
+                                           required>
+
+                                    <button type="button"
+                                            class="dashboard-password-toggle"
+                                            data-target="newPassword">
+                                        <i class="fa-regular fa-eye"></i>
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="dashboard-form-group">
+
+                                <label for="confirmNewPassword">
+                                    Confirm New Password
+                                </label>
+
+                                <div class="dashboard-input-wrapper">
+
+                                    <input type="password"
+                                           id="confirmNewPassword"
+                                           placeholder="Confirm new password"
+                                           required>
+
+                                    <button type="button"
+                                            class="dashboard-password-toggle"
+                                            data-target="confirmNewPassword">
+                                        <i class="fa-regular fa-eye"></i>
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+                            <p class="inline-error" id="passwordError"></p>
+
+                            <button type="submit" class="primary-btn">
+                                <i class="fa-solid fa-key"></i>
+                                Update Password
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </section>
+
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- TOAST NOTIFICATION -->
+    <div class="dashboard-toast" id="dashboardToast" role="status" aria-live="polite">
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        <span id="dashboardToastMessage"></span>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="../js/storage.js"></script>
+    <script src="../js/dashboard.js"></script>
+
+</body>
+
+</html>

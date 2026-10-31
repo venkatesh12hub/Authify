@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Registration | Authify</title>
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+<div class="auth-page">
+    <div class="auth-info">
+        <a href="../index.html" class="logo"><i class="fa-solid fa-shield-halved"></i> Authify<span>.</span></a>
+        <div class="info-content">
+            <div class="info-badge">ADMINISTRATOR PORTAL</div>
+            <h1>Create your admin account. <span>Take control.</span></h1>
+            <p>Register your administrator account to manage users and account activities through the Authify dashboard.</p>
+        </div>
+        <div class="info-footer">© 2026 Authify</div>
+    </div>
+    <div class="auth-form-section">
+        <div class="auth-form-wrapper">
+            <div class="form-heading">
+                <span class="section-tag">ADMIN REGISTRATION</span>
+                <h2>Create Admin Account</h2>
+                <p>Enter your details to set up the administrator account.</p>
+            </div>
+            <form id="adminRegisterForm" novalidate>
+                <div class="form-group">
+                    <label for="adminName">Full Name</label>
+                    <div class="input-wrapper"><i class="fa-regular fa-user"></i><input type="text" id="adminName" placeholder="Enter your name" autocomplete="name"></div>
+                    <small class="error-message" id="adminNameError"></small>
+                </div>
+                <div class="form-group">
+                    <label for="adminRegisterEmail">Admin Email</label>
+                    <div class="input-wrapper"><i class="fa-regular fa-envelope"></i><input type="email" id="adminRegisterEmail" placeholder="Enter admin email" autocomplete="email"></div>
+                    <small class="error-message" id="adminRegisterEmailError"></small>
+                </div>
+                <div class="form-group">
+                    <label for="adminRegisterPassword">Password</label>
+                    <div class="input-wrapper"><i class="fa-solid fa-lock"></i><input type="password" id="adminRegisterPassword" placeholder="Create a password" autocomplete="new-password"><button type="button" class="toggle-password" id="toggleAdminRegisterPassword"><i class="fa-regular fa-eye"></i></button></div>
+                    <small class="error-message" id="adminRegisterPasswordError"></small>
+                </div>
+                <div class="form-group">
+                    <label for="adminConfirmPassword">Confirm Password</label>
+                    <div class="input-wrapper"><i class="fa-solid fa-lock"></i><input type="password" id="adminConfirmPassword" placeholder="Confirm your password" autocomplete="new-password"></div>
+                    <small class="error-message" id="adminConfirmPasswordError"></small>
+                </div>
+                <button type="submit" class="submit-btn" id="adminRegisterBtn">Create Admin Account <i class="fa-solid fa-arrow-right"></i></button>
+            </form>
+            <div class="back-home">Already registered? <a href="admin-login.html">Admin Sign In</a></div>
+            <div class="back-home"><a href="../index.html"><i class="fa-solid fa-arrow-left"></i> Back to Home</a></div>
+        </div>
+    </div>
+</div>
+<div class="auth-toast" id="authToast"><i class="fa-solid fa-circle-check"></i><span id="authToastMessage"></span></div>
+<script src="../js/storage.js"></script>
+<script src="../js/admin-register.js"></script>
+</body>
+</html>

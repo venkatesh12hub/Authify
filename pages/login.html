@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sign In | Authify</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/auth.css">
+
+</head>
+
+<body>
+
+    <div class="auth-page">
+
+        <!-- LEFT SECTION -->
+        <div class="auth-info">
+
+            <a href="../index.html" class="logo">
+                <i class="fa-solid fa-shield-halved"></i>
+                Authify<span>.</span>
+            </a>
+
+            <div class="info-content">
+
+                <div class="info-badge">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    Welcome Back
+                </div>
+
+                <h1>
+                    Your account.
+                    <span>Your personal space.</span>
+                </h1>
+
+                <p>
+                    Sign in to continue your journey.
+                    Access your account, manage your profile
+                    and enjoy a seamless experience.
+                </p>
+
+                <div class="info-points">
+
+                    <div>
+                        <i class="fa-solid fa-circle-check"></i>
+                        Personalized dashboard
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-circle-check"></i>
+                        Manage your account
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-circle-check"></i>
+                        Simple account access
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="info-footer">
+                © 2026 Authify. All rights reserved.
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT LOGIN SECTION -->
+        <div class="auth-form-section">
+
+            <div class="auth-form-wrapper">
+
+                <div class="mobile-logo">
+                    <a href="../index.html" class="logo">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        Authify<span>.</span>
+                    </a>
+                </div>
+
+                <div class="form-heading">
+
+                    <span class="section-tag">USER AUTHENTICATION</span>
+
+                    <h2>Welcome back!</h2>
+
+                    <p>Enter your credentials to access your account.</p>
+
+                </div>
+
+
+                <!-- LOGIN FORM -->
+                <form id="loginForm" novalidate>
+
+                    <!-- EMAIL -->
+                    <div class="form-group">
+
+                        <label for="loginEmail">Email Address</label>
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-regular fa-envelope"></i>
+
+                            <input
+                                type="email"
+                                id="loginEmail"
+                                placeholder="example@gmail.com"
+                                autocomplete="username"
+                            >
+
+                        </div>
+
+                        <small class="error-message" id="loginEmailError"></small>
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+                    <div class="form-group">
+
+                        <label for="loginPassword">Password</label>
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="loginPassword"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                            >
+
+                            <button
+                                type="button"
+                                class="toggle-password"
+                                id="toggleLoginPassword"
+                                aria-label="Show password">
+
+                                <i class="fa-regular fa-eye"></i>
+
+                            </button>
+
+                        </div>
+
+                        <small class="error-message" id="loginPasswordError"></small>
+
+                    </div>
+
+
+                    <!-- REMEMBER AND FORGOT -->
+                    <div class="login-options">
+
+                        <label class="remember-label">
+
+                            <input type="checkbox" id="rememberMe">
+
+                            <span>Remember me</span>
+
+                        </label>
+
+                        <button type="button" class="forgot-btn" id="forgotPassword">
+                            Forgot Password?
+                        </button>
+
+                    </div>
+
+
+                    <!-- LOGIN BUTTON -->
+                    <button type="submit" class="submit-btn" id="loginBtn">
+
+                        Sign In
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </form>
+
+
+                <!-- REGISTRATION LINK -->
+                <div class="login-link">
+
+                    Don't have an account?
+
+                    <a href="register.html">Create Account</a>
+
+                </div>
+
+
+                <!-- BACK HOME -->
+                <div class="back-home">
+
+                    <a href="../index.html">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Back to Home
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- TOAST -->
+    <div class="auth-toast" id="authToast" role="status" aria-live="polite">
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        <span id="authToastMessage"></span>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="../js/storage.js"></script>
+    <script src="../js/login.js"></script>
+
+</body>
+
+</html>

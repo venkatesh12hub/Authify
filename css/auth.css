@@ -1,0 +1,569 @@
+
+/* ==================================
+   1. GLOBAL SETTINGS
+================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-primary: #080b14;
+    --bg-secondary: #0d1220;
+    --bg-card: #111827;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent: #8b5cf6;
+    --accent-light: #a78bfa;
+    --border: rgba(255,255,255,0.1);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button, input {
+    font-family: inherit;
+}
+
+
+/* ==================================
+   2. MAIN AUTH LAYOUT
+================================== */
+
+.auth-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+}
+
+
+/* ==================================
+   3. LEFT INFORMATION SECTION
+================================== */
+
+.auth-info {
+    position: relative;
+    min-height: 100vh;
+    padding: 45px 9%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 20% 25%, rgba(124,58,237,0.2), transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(37,99,235,0.15), transparent 40%),
+        #0d1220;
+
+    border-right: 1px solid var(--border);
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo i,
+.logo span {
+    color: var(--accent-light);
+}
+
+.info-content {
+    max-width: 490px;
+    position: relative;
+    z-index: 2;
+}
+
+.info-badge {
+    display: inline-flex;
+    gap: 9px;
+    align-items: center;
+    background: rgba(139,92,246,0.12);
+    border: 1px solid rgba(139,92,246,0.3);
+    padding: 10px 15px;
+    border-radius: 30px;
+    color: #c4b5fd;
+    font-size: 12px;
+    margin-bottom: 30px;
+}
+
+.info-content h1 {
+    font-size: clamp(35px, 4vw, 52px);
+    line-height: 1.2;
+    letter-spacing: -2px;
+}
+
+.info-content h1 span {
+    display: block;
+    background: linear-gradient(90deg, #a78bfa, #6366f1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.info-content > p {
+    font-size: 14px;
+    line-height: 1.9;
+    color: var(--text-secondary);
+    margin-top: 25px;
+}
+
+.info-points {
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-points div {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    font-size: 13px;
+    color: #cbd5e1;
+}
+
+.info-points i {
+    color: #4ade80;
+}
+
+.info-footer {
+    color: #64748b;
+    font-size: 11px;
+}
+
+
+/* ==================================
+   4. RIGHT FORM SECTION
+================================== */
+
+.auth-form-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 55px 30px;
+    background: var(--bg-primary);
+}
+
+.auth-form-wrapper {
+    width: 100%;
+    max-width: 430px;
+}
+
+.mobile-logo {
+    display: none;
+}
+
+.form-heading {
+    margin-bottom: 30px;
+}
+
+.section-tag {
+    color: var(--accent-light);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.form-heading h2 {
+    font-size: 31px;
+    margin: 12px 0;
+    letter-spacing: -1px;
+}
+
+.form-heading p {
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* ==================================
+   5. FORM INPUTS
+================================== */
+
+.form-group {
+    margin-bottom: 19px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 9px;
+    color: #e2e8f0;
+}
+
+.input-wrapper {
+    height: 49px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 15px;
+    border: 1px solid var(--border);
+    background: var(--bg-secondary);
+    border-radius: 9px;
+    transition: 0.3s;
+}
+
+.input-wrapper:focus-within {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(139,92,246,0.12);
+}
+
+.input-wrapper > i {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.input-wrapper input {
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    outline: none;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 12px;
+}
+
+.input-wrapper input::placeholder {
+    color: #64748b;
+}
+
+.toggle-password {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.toggle-password:hover {
+    color: white;
+}
+
+
+/* ==================================
+   6. PASSWORD STRENGTH
+================================== */
+
+.password-strength {
+    margin-top: 10px;
+}
+
+.strength-bars {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 6px;
+}
+
+.strength-bars span {
+    height: 4px;
+    flex: 1;
+    border-radius: 5px;
+    background: #293244;
+    transition: 0.3s;
+}
+
+#strengthText {
+    font-size: 10px;
+    color: var(--text-secondary);
+}
+
+
+/* ==================================
+   7. VALIDATION MESSAGES
+================================== */
+
+.error-message {
+    display: block;
+    min-height: 0;
+    font-size: 10px;
+    color: #fb7185;
+    margin-top: 6px;
+    line-height: 1.5;
+}
+
+.input-wrapper.invalid {
+    border-color: #f43f5e;
+}
+
+
+/* ==================================
+   8. TERMS AND CONDITIONS
+================================== */
+
+.terms-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 5px 0 2px;
+}
+
+.terms-group input {
+    margin-top: 3px;
+    accent-color: var(--accent);
+    cursor: pointer;
+}
+
+.terms-group label {
+    font-size: 11px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    cursor: pointer;
+}
+
+.terms-group a {
+    color: var(--accent-light);
+    font-weight: 600;
+}
+
+
+/* ==================================
+   9. SUBMIT BUTTON
+================================== */
+
+.submit-btn {
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 9px;
+    background: linear-gradient(135deg, #7c3aed, #6366f1);
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(124,58,237,0.3);
+}
+
+
+/* ==================================
+   10. LOGIN AND HOME LINKS
+================================== */
+
+.login-link {
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-top: 25px;
+}
+
+.login-link a {
+    color: var(--accent-light);
+    font-weight: 700;
+    margin-left: 4px;
+}
+
+.back-home {
+    text-align: center;
+    margin-top: 22px;
+}
+
+.back-home a {
+    font-size: 11px;
+    color: #64748b;
+    transition: 0.3s;
+}
+
+.back-home a:hover {
+    color: white;
+}
+
+
+/* ==================================
+   11. TOAST NOTIFICATION
+================================== */
+
+.auth-toast {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 20px;
+    background: #172033;
+    border: 1px solid rgba(139,92,246,0.4);
+    border-radius: 10px;
+    color: white;
+    font-size: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: 0.3s;
+}
+
+.auth-toast.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.auth-toast i {
+    color: #4ade80;
+}
+
+
+/* ==================================
+   12. RESPONSIVE DESIGN
+================================== */
+
+@media(max-width: 950px) {
+
+    .auth-page {
+        grid-template-columns: 0.85fr 1.15fr;
+    }
+
+    .auth-info {
+        padding: 35px 7%;
+    }
+
+    .info-content h1 {
+        font-size: 37px;
+    }
+}
+
+@media(max-width: 700px) {
+
+    .auth-page {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-info {
+        display: none;
+    }
+
+    .auth-form-section {
+        min-height: 100vh;
+        padding: 35px 22px;
+    }
+
+    .mobile-logo {
+        display: block;
+        margin-bottom: 45px;
+    }
+
+    .form-heading h2 {
+        font-size: 28px;
+    }
+
+}
+
+
+/* ==================================
+   PHASE 3 - LOGIN PAGE
+================================== */
+
+
+/* Login Options */
+
+.login-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.remember-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-secondary);
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.remember-label input {
+    accent-color: #8b5cf6;
+    cursor: pointer;
+}
+
+.forgot-btn {
+    border: none;
+    background: none;
+    color: #a78bfa;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.forgot-btn:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+
+/* Login Form Animation */
+
+#loginForm {
+    animation: loginAppear 0.6s ease;
+}
+
+@keyframes loginAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* Login Button Disabled */
+
+.submit-btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* Responsive Login Options */
+
+@media(max-width: 400px) {
+
+    .login-options {
+        gap: 10px;
+    }
+
+    .remember-label,
+    .forgot-btn {
+        font-size: 10px;
+    }
+
+}

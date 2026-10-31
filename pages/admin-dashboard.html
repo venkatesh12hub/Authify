@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | Authify</title>
+
+    <link rel="stylesheet" href="../css/admin.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+    <aside class="admin-sidebar">
+
+        <a href="../index.html" class="admin-logo">
+            <i class="fa-solid fa-shield-halved"></i>
+            Authify<span>.</span>
+        </a>
+
+        <p class="admin-label">ADMINISTRATION</p>
+
+        <a href="#overview" class="admin-nav active">
+            <i class="fa-solid fa-chart-pie"></i>
+            Dashboard
+        </a>
+
+        <a href="#users" class="admin-nav">
+            <i class="fa-solid fa-users"></i>
+            User Management
+        </a>
+
+        <div class="admin-sidebar-bottom">
+            <div class="admin-profile">
+                <i class="fa-solid fa-user-shield"></i>
+                <div>
+                    <strong>Administrator</strong>
+                    <small>Super Admin</small>
+                </div>
+            </div>
+
+            <button id="adminLogout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </button>
+        </div>
+
+    </aside>
+
+
+    <main class="admin-main">
+
+        <header class="admin-topbar">
+            <div>
+                <span>ADMIN / OVERVIEW</span>
+                <h2>Admin Dashboard</h2>
+            </div>
+
+            <div class="admin-top-profile">
+                <i class="fa-solid fa-user-shield"></i>
+                Administrator
+            </div>
+        </header>
+
+
+        <div class="admin-content">
+
+            <section id="overview">
+
+                <div class="admin-welcome">
+                    <div>
+                        <span>ADMIN CONTROL PANEL</span>
+                        <h1>Welcome, Administrator!</h1>
+                        <p>Manage all registered users from one place.</p>
+                    </div>
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+
+
+                <div class="admin-stats">
+
+                    <div class="admin-stat">
+                        <i class="fa-solid fa-users"></i>
+                        <span>Total Users</span>
+                        <h2 id="totalUsers">0</h2>
+                    </div>
+
+                    <div class="admin-stat">
+                        <i class="fa-solid fa-user-check"></i>
+                        <span>Active Users</span>
+                        <h2 id="activeUsers">0</h2>
+                    </div>
+
+                    <div class="admin-stat">
+                        <i class="fa-solid fa-user-lock"></i>
+                        <span>Blocked Users</span>
+                        <h2 id="blockedUsers">0</h2>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section id="users" class="user-management">
+
+                <div class="management-heading">
+                    <div>
+                        <h2>User Management</h2>
+                        <p>View, edit, block and delete registered accounts.</p>
+                    </div>
+                </div>
+
+                <div class="user-table-card">
+
+                    <div class="table-toolbar">
+                        <h3>Registered Users</h3>
+
+                        <div class="admin-search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="search" id="userSearch"
+                                   placeholder="Search users...">
+                        </div>
+                    </div>
+
+                    <div class="table-scroll">
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Registered</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="adminTableBody"></tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- EDIT USER MODAL -->
+
+<div class="admin-modal" id="editModal">
+
+    <div class="admin-modal-content">
+
+        <h2>Edit User Details</h2>
+
+        <p>Update the selected user's information.</p>
+
+        <form id="editUserForm">
+
+            <label for="editUserName">Full Name</label>
+            <input type="text" id="editUserName" required>
+
+            <label for="editUserEmail">Email Address</label>
+            <input type="email" id="editUserEmail" required>
+
+            <label for="editUserPhone">Phone Number</label>
+            <input type="tel" id="editUserPhone"
+                   maxlength="10" inputmode="numeric" required>
+
+            <div class="modal-actions">
+                <button type="button" id="cancelEdit">Cancel</button>
+                <button type="submit">Save Changes</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<div class="admin-toast" id="adminToast">
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="adminToastMessage"></span>
+</div>
+
+
+<script src="../js/storage.js"></script>
+<script src="../js/admin.js"></script>
+
+</body>
+</html>
